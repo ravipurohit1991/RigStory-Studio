@@ -1,0 +1,103 @@
+{
+  "actors": [
+    {
+      "character_id": "char_biped_alpha",
+      "display_name": "Mira",
+      "facing": "right",
+      "id": "actor_mira",
+      "root_transform": {
+        "position": [
+          -2.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "state": "standing"
+    },
+    {
+      "character_id": "char_biped_beta",
+      "display_name": "Jon",
+      "facing": "left",
+      "id": "actor_jon",
+      "root_transform": {
+        "position": [
+          2.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "state": "standing"
+    }
+  ],
+  "ground_y": 0.0,
+  "id": "scene_meeting",
+  "name": "Meeting",
+  "objects": [
+    {
+      "affordances": [],
+      "anchors": [],
+      "blocked": false,
+      "body_type": "static",
+      "bounds": [
+        -10.0,
+        -1.0,
+        10.0,
+        0.0
+      ],
+      "colliders": [
+        {
+          "center": [
+            0.0,
+            -0.5
+          ],
+          "rotation_deg": 0.0,
+          "size": [
+            20.0,
+            1.0
+          ],
+          "type": "box"
+        }
+      ],
+      "collision_layer": "ground",
+      "collision_mask": [
+        "default"
+      ],
+      "id": "floor_main",
+      "kind": "floor",
+      "locked": false,
+      "name": "Floor",
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "visible": true,
+      "visual": {
+        "fill": "#d8dee9",
+        "opacity": 1.0,
+        "type": "rectangle"
+      },
+      "walkable": false
+    }
+  ],
+  "world_bounds": [
+    -10.0,
+    -1.0,
+    10.0,
+    8.0
+  ]
+}

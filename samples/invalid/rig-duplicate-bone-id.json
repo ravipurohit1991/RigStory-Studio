@@ -1,0 +1,60 @@
+{
+  "bones": [
+    {
+      "id": "root",
+      "joint_limit": null,
+      "length": 1.0,
+      "parent_id": null,
+      "setup_transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "tags": []
+    },
+    {
+      "id": "arm",
+      "joint_limit": null,
+      "length": 1.0,
+      "parent_id": "root",
+      "setup_transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "tags": []
+    },
+    {
+      "id": "arm",
+      "joint_limit": null,
+      "length": 1.0,
+      "parent_id": "root",
+      "setup_transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "tags": []
+    }
+  ],
+  "id": "rig_invalid_duplicate",
+  "name": "Duplicate ids"
+}

@@ -1,0 +1,67 @@
+{
+  "asset_manifest": [],
+  "characters": [
+    {
+      "attachments": [],
+      "id": "char_invalid_limits",
+      "name": "Inverted limits",
+      "rig": {
+        "bones": [
+          {
+            "id": "root",
+            "joint_limit": null,
+            "length": 1.0,
+            "parent_id": null,
+            "setup_transform": {
+              "position": [
+                0.0,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": []
+          },
+          {
+            "id": "arm",
+            "joint_limit": {
+              "max_rotation_deg": -30.0,
+              "min_rotation_deg": 30.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 1.0,
+            "parent_id": "root",
+            "setup_transform": {
+              "position": [
+                0.0,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": []
+          }
+        ],
+        "id": "rig_invalid_limits",
+        "name": "Inverted limits"
+      }
+    }
+  ],
+  "clips": [],
+  "engine_version": "0.1.0",
+  "format": "rigstory-project",
+  "generation_records": [],
+  "motion_plans": [],
+  "project": {
+    "id": "project_invalid_demo",
+    "name": "Invalid"
+  },
+  "scenes": [],
+  "schema_version": "0.6.0"
+}

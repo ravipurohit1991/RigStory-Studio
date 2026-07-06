@@ -1,0 +1,167 @@
+{
+  "actors": [
+    {
+      "character_id": "char_biped_alpha",
+      "display_name": "Mira",
+      "facing": "right",
+      "id": "actor_mira",
+      "root_transform": {
+        "position": [
+          -2.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "state": "standing"
+    }
+  ],
+  "ground_y": 0.0,
+  "id": "scene_room",
+  "name": "Room with chair",
+  "objects": [
+    {
+      "affordances": [],
+      "anchors": [],
+      "blocked": false,
+      "body_type": "static",
+      "bounds": [
+        -10.0,
+        -1.0,
+        10.0,
+        0.0
+      ],
+      "colliders": [
+        {
+          "center": [
+            0.0,
+            -0.5
+          ],
+          "rotation_deg": 0.0,
+          "size": [
+            20.0,
+            1.0
+          ],
+          "type": "box"
+        }
+      ],
+      "collision_layer": "ground",
+      "collision_mask": [
+        "default"
+      ],
+      "id": "floor_main",
+      "kind": "floor",
+      "locked": false,
+      "name": "Floor",
+      "transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "visible": true,
+      "visual": {
+        "fill": "#d8dee9",
+        "opacity": 1.0,
+        "type": "rectangle"
+      },
+      "walkable": false
+    },
+    {
+      "affordances": [
+        {
+          "anchor_id": "seat",
+          "type": "sit"
+        },
+        {
+          "anchor_id": null,
+          "type": "look_at"
+        },
+        {
+          "anchor_id": null,
+          "type": "avoid"
+        }
+      ],
+      "anchors": [
+        {
+          "id": "seat",
+          "position": [
+            0.0,
+            1.05
+          ],
+          "rotation_deg": 0.0
+        },
+        {
+          "id": "back",
+          "position": [
+            0.5,
+            1.75
+          ],
+          "rotation_deg": 0.0
+        }
+      ],
+      "blocked": false,
+      "body_type": "static",
+      "bounds": [
+        2.0,
+        0.0,
+        3.4,
+        2.2
+      ],
+      "colliders": [
+        {
+          "center": [
+            0.0,
+            1.1
+          ],
+          "rotation_deg": 0.0,
+          "size": [
+            1.4,
+            2.2
+          ],
+          "type": "box"
+        }
+      ],
+      "collision_layer": "default",
+      "collision_mask": [
+        "default"
+      ],
+      "id": "chair_1",
+      "kind": "chair",
+      "locked": false,
+      "name": "Chair",
+      "transform": {
+        "position": [
+          2.7,
+          0.0
+        ],
+        "rotation_deg": 0.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "visible": true,
+      "visual": {
+        "fill": "#d8dee9",
+        "opacity": 1.0,
+        "type": "rectangle"
+      },
+      "walkable": false
+    }
+  ],
+  "world_bounds": [
+    -10.0,
+    -1.0,
+    10.0,
+    8.0
+  ]
+}

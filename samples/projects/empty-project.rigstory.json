@@ -1,0 +1,15 @@
+{
+  "asset_manifest": [],
+  "characters": [],
+  "clips": [],
+  "engine_version": "0.1.0",
+  "format": "rigstory-project",
+  "generation_records": [],
+  "motion_plans": [],
+  "project": {
+    "id": "project_empty_demo",
+    "name": "Empty Project"
+  },
+  "scenes": [],
+  "schema_version": "0.6.0"
+}

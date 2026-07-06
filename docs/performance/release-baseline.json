@@ -1,0 +1,29 @@
+{
+  "motion_compile": {
+    "median_ms": 9.397,
+    "repeats": 25
+  },
+  "png_sequence_export": {
+    "byte_length": 7471,
+    "duration_ms": 91.721,
+    "format": "png_sequence",
+    "frame_count": 15,
+    "frame_rate": 12,
+    "height": 240,
+    "width": 320
+  },
+  "project_load": {
+    "median_ms": 0.448,
+    "repeats": 50
+  },
+  "sample": "samples/projects/biped-demo.rigstory.json",
+  "webm_export": {
+    "byte_length": 1614,
+    "duration_ms": 118.533,
+    "format": "webm",
+    "frame_count": 8,
+    "frame_rate": 6,
+    "height": 120,
+    "width": 160
+  }
+}

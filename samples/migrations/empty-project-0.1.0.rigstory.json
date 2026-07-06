@@ -1,0 +1,15 @@
+{
+  "format": "rigstory-project",
+  "schema_version": "0.1.0",
+  "engine_version": "0.1.0",
+  "project": {
+    "id": "project_empty_demo",
+    "name": "Empty Project"
+  },
+  "characters": [],
+  "scenes": [],
+  "motion_plans": [],
+  "clips": [],
+  "asset_manifest": [],
+  "generation_records": []
+}
