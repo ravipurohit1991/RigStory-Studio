@@ -41,16 +41,20 @@ def _export_archive(client: TestClient, project_id: str) -> bytes:
     assert response.status_code == 200
     assert response.headers["content-type"] == "application/zip"
     assert "attachment" in response.headers["content-disposition"]
-    return response.content
+    content: object = response.content
+    assert isinstance(content, bytes)
+    return content
 
 
 def _import_archive(client: TestClient, payload: bytes, **params: str) -> httpx.Response:
-    return client.post(
+    response: object = client.post(
         "/api/v1/projects/import",
         params=params,
         content=payload,
         headers={"Content-Type": "application/zip"},
     )
+    assert isinstance(response, httpx.Response)
+    return response
 
 
 def test_archive_export_import_round_trip_assigns_new_id_on_conflict(
