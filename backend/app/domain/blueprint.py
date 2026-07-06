@@ -476,18 +476,14 @@ def merge_regional_blueprint_update(
     if region == "hair":
         return base.model_copy(
             update={
-                "appearance": base.appearance.model_copy(
-                    update={"hair": update.appearance.hair}
-                ),
+                "appearance": base.appearance.model_copy(update={"hair": update.appearance.hair}),
                 "warnings": (*base.warnings, *update.warnings),
             }
         )
     if region == "face":
         return base.model_copy(
             update={
-                "appearance": base.appearance.model_copy(
-                    update={"face": update.appearance.face}
-                ),
+                "appearance": base.appearance.model_copy(update={"face": update.appearance.face}),
                 "warnings": (*base.warnings, *update.warnings),
             }
         )

@@ -1,5 +1,7 @@
 # RigStory Studio
 
+[![CI](https://github.com/ravipurohit1991/RigStory-Studio/actions/workflows/ci.yml/badge.svg)](https://github.com/ravipurohit1991/RigStory-Studio/actions/workflows/ci.yml)
+
 RigStory Studio is a local-first 2D character creation and animation application. A user can build procedural vector characters, edit rigs and timelines, create scenes, ask a local Ollama model for structured character or motion plans, and export portable native project data.
 
 ![RigStory Studio rig editor showing a demo character wave](docs/assets/rig-editor-demo.png)

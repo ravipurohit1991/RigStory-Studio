@@ -320,10 +320,7 @@ def _draw_attachment(
         vertices = skin_attachment_vertices(attachment, rig)
         color = _parse_hex_color(attachment.mesh.fill, attachment.mesh.opacity)
         for triangle in attachment.mesh.triangles:
-            points = [
-                attachment_world.apply_point(vertices[index])
-                for index in triangle.indices
-            ]
+            points = [attachment_world.apply_point(vertices[index]) for index in triangle.indices]
             _draw_polygon(draw, points, scene, width, height, color)
         return
 
@@ -344,9 +341,7 @@ def _render_frame(
     settings: MediaExportRequest,
 ) -> Image.Image:
     background = (
-        (0, 0, 0, 0)
-        if settings.transparent
-        else _parse_hex_color(settings.background or "#ffffff")
+        (0, 0, 0, 0) if settings.transparent else _parse_hex_color(settings.background or "#ffffff")
     )
     image = Image.new("RGBA", (settings.width, settings.height), background)
     draw = ImageDraw.Draw(image, "RGBA")
@@ -454,10 +449,7 @@ def _zip_png_sequence(
 
 def _xml_escape(value: str) -> str:
     return (
-        value.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
+        value.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
     )
 
 

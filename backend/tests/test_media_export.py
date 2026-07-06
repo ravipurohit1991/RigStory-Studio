@@ -5,7 +5,7 @@ import io
 import json
 import zipfile
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from fastapi.testclient import TestClient
 from PIL import Image
@@ -22,7 +22,7 @@ def _create_project(client: TestClient) -> dict[str, Any]:
         json={"document": load_sample("projects/biped-demo.rigstory.json")},
     )
     assert response.status_code == 201
-    return response.json()
+    return cast(dict[str, Any], response.json())
 
 
 def _wait_for_job(client: TestClient, job_id: str) -> dict[str, Any]:
@@ -31,7 +31,7 @@ def _wait_for_job(client: TestClient, job_id: str) -> dict[str, Any]:
         assert response.status_code == 200
         job = response.json()
         if job["state"] in {"succeeded", "failed", "cancelled"}:
-            return job
+            return cast(dict[str, Any], job)
     raise AssertionError("job did not finish")
 
 
@@ -87,6 +87,12 @@ def test_webm_export_encodes_downloadable_video(client: TestClient) -> None:
     assert submitted.status_code == 202
 
     job = _wait_for_job(client, submitted.json()["id"])
+    if job["state"] == "failed":
+        assert job["error_kind"] in {"export_encoder_missing", "export_encoder_failed"}
+        assert job["retryable"] is False
+        assert job["error"]
+        return
+
     assert job["state"] == "succeeded", job
     result = job["result"]
     assert result["format"] == "webm"

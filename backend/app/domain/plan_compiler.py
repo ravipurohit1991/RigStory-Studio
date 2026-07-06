@@ -240,9 +240,7 @@ def _arm_ik_keys(
         )
     suffix = "r" if hand == "right" else "l"
     state.scalar_key(actor_id, f"upper_arm_{suffix}", action_id, start, 0.0)
-    state.scalar_key(
-        actor_id, f"upper_arm_{suffix}", action_id, raise_at, ik.shoulder_rotation_deg
-    )
+    state.scalar_key(actor_id, f"upper_arm_{suffix}", action_id, raise_at, ik.shoulder_rotation_deg)
     state.scalar_key(actor_id, f"forearm_{suffix}", action_id, raise_at, ik.elbow_rotation_deg)
     return ik.target_error
 
@@ -419,8 +417,9 @@ def _compile_handshake(
     )
 
     state.markers.append(
-        ClipMarker(name=f"{contact_slug}_contact_start", time=round(approach_end, 4),
-                   kind="contact")
+        ClipMarker(
+            name=f"{contact_slug}_contact_start", time=round(approach_end, 4), kind="contact"
+        )
     )
     state.markers.append(
         ClipMarker(name=f"{contact_slug}_contact_end", time=round(hold_end, 4), kind="contact")
@@ -475,9 +474,7 @@ def _compile_action(state: _CompileState, item: ScheduledAction) -> None:
             state.move_actor(actor_id, end, origin)
             return
         goal = (
-            target - to_target.normalized().scaled(stop_distance)
-            if stop_distance > 0.0
-            else target
+            target - to_target.normalized().scaled(stop_distance) if stop_distance > 0.0 else target
         )
         # Keep out of the other actor's personal space at arrival (plan.md §9.2).
         for other_id in state.actors:
@@ -594,8 +591,9 @@ def _compile_action(state: _CompileState, item: ScheduledAction) -> None:
         for rep in range(action.repetitions * 2 + 1):
             phase = rep / max(1, action.repetitions * 2)
             value = -55.0 + (amplitude if rep % 2 == 0 else -amplitude)
-            state.scalar_key(actor_id, f"forearm_{suffix}", action.id, start + duration * phase,
-                             value)
+            state.scalar_key(
+                actor_id, f"forearm_{suffix}", action.id, start + duration * phase, value
+            )
     elif isinstance(action, SitAction):
         target = _resolve_target(state, action.target_ref, start)
         if target is None:
@@ -622,8 +620,9 @@ def _compile_action(state: _CompileState, item: ScheduledAction) -> None:
             state.scalar_key(actor_id, bone_id, action.id, end, 0.0)
     elif isinstance(action, LeanAction):
         state.scalar_key(actor_id, "spine_upper", action.id, start, 0.0)
-        state.scalar_key(actor_id, "spine_upper", action.id, start + duration * 0.5,
-                         action.amount * 12.0)
+        state.scalar_key(
+            actor_id, "spine_upper", action.id, start + duration * 0.5, action.amount * 12.0
+        )
         state.scalar_key(actor_id, "spine_upper", action.id, end, 0.0)
     elif action.type in {"shift_weight", "crouch", "kneel"}:
         amount = getattr(action, "amount", 0.5)

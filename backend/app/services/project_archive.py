@@ -124,9 +124,7 @@ def build_project_archive(
             if disk_path.is_file():
                 payload = disk_path.read_bytes()
                 if sha256_hex(payload) != entry.sha256:
-                    raise ArchiveError(
-                        f"asset {entry.id!r} on disk does not match manifest sha256"
-                    )
+                    raise ArchiveError(f"asset {entry.id!r} on disk does not match manifest sha256")
         archive_path = asset_archive_path(entry.sha256)
         if payload is not None:
             asset_payloads[archive_path] = payload
@@ -251,9 +249,7 @@ def read_project_archive(data: bytes) -> ReadArchive:
         if not isinstance(raw_document, dict):
             raise ArchiveError("project.json must contain a JSON object")
 
-        expected_asset_paths = {
-            entry.path: entry for entry in manifest.assets if entry.included
-        }
+        expected_asset_paths = {entry.path: entry for entry in manifest.assets if entry.included}
         asset_payloads: dict[str, bytes] = {}
         for name in names:
             if name in (MANIFEST_NAME, PROJECT_DOCUMENT_NAME):
@@ -316,11 +312,7 @@ def load_archive_for_import(
         if new_project_id is None:
             raise ArchiveError("a replacement project id is required to resolve the conflict")
         document = loaded.document.model_copy(
-            update={
-                "project": loaded.document.project.model_copy(
-                    update={"id": new_project_id}
-                )
-            }
+            update={"project": loaded.document.project.model_copy(update={"id": new_project_id})}
         )
         loaded = LoadedProject(document=document, migration=loaded.migration)
         id_reassigned = True

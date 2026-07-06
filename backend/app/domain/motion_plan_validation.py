@@ -166,8 +166,7 @@ def validate_motion_plan(plan: MotionPlanBody, snapshot: SceneSnapshot) -> PlanV
                 errors.append(
                     ValidationIssue(
                         "PLAN_UNKNOWN_ACTOR",
-                        f"handshake {action.id!r} references unknown partner "
-                        f"{action.partner_id!r}",
+                        f"handshake {action.id!r} references unknown partner {action.partner_id!r}",
                         f"{path}.partner_id",
                     )
                 )
@@ -219,8 +218,7 @@ def validate_motion_plan(plan: MotionPlanBody, snapshot: SceneSnapshot) -> PlanV
         errors.append(
             ValidationIssue(
                 "PLAN_TOO_MANY_ACTORS",
-                f"plan references {len(plan_actor_ids)} actors; the maximum is "
-                f"{MAX_PLAN_ACTORS}",
+                f"plan references {len(plan_actor_ids)} actors; the maximum is {MAX_PLAN_ACTORS}",
                 "actions",
             )
         )
@@ -243,8 +241,7 @@ def validate_motion_plan(plan: MotionPlanBody, snapshot: SceneSnapshot) -> PlanV
             errors.append(
                 ValidationIssue(
                     "PLAN_UNKNOWN_TARGET",
-                    f"contact {contact.id!r} references unknown target "
-                    f"{contact.target_ref!r}",
+                    f"contact {contact.id!r} references unknown target {contact.target_ref!r}",
                     f"{path}.target_ref",
                 )
             )

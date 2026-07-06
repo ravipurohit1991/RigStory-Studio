@@ -2,16 +2,20 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import cast
 
-from app.domain.canonical import canonical_json_pretty
+from app.domain.canonical import JsonValue, canonical_json_pretty
 from app.domain.versioning import PROJECT_SCHEMA_VERSION
 from app.services.project_store import FileProjectStore
 from tests.sample_paths import load_sample
 
+type JsonObject = dict[str, JsonValue]
 
-def _plant_legacy_project(root: Path, raw: dict) -> str:
+
+def _plant_legacy_project(root: Path, raw: JsonObject) -> str:
     """Write an older-version document directly, as a pre-upgrade install would have."""
-    project_id = raw["project"]["id"]
+    project = cast(JsonObject, raw["project"])
+    project_id = str(project["id"])
     project_dir = root / "projects" / project_id
     (project_dir / "revisions").mkdir(parents=True)
     text = canonical_json_pretty(raw)
@@ -46,12 +50,15 @@ def test_opening_a_legacy_project_backs_up_then_upgrades_in_place(tmp_path: Path
     backups = list((tmp_path / "projects" / project_id / "backups").glob("*.json"))
     assert len(backups) == 1
     assert "pre-upgrade-0.3.0" in backups[0].name
-    backup_raw = json.loads(backups[0].read_text(encoding="utf-8"))
+    backup_raw = cast(JsonObject, json.loads(backups[0].read_text(encoding="utf-8")))
     assert backup_raw["schema_version"] == "0.3.0"
 
     # current.json is upgraded in place and re-reading is a plain read.
-    current_raw = json.loads(
-        (tmp_path / "projects" / project_id / "current.json").read_text(encoding="utf-8")
+    current_raw = cast(
+        JsonObject,
+        json.loads(
+            (tmp_path / "projects" / project_id / "current.json").read_text(encoding="utf-8")
+        ),
     )
     assert current_raw["schema_version"] == str(PROJECT_SCHEMA_VERSION)
     reread = store.get_project(project_id)

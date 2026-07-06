@@ -99,9 +99,7 @@ def get_motion_plan(plan_id: str, store: ProjectStoreDep) -> MotionPlanRead:
         stored = store.get_motion_plan(plan_id)
     except ProjectNotFoundError as exc:
         raise HTTPException(status_code=404, detail="motion plan not found") from exc
-    return MotionPlanRead(
-        project_id=stored.project_id, plan=stored.plan, revision=stored.revision
-    )
+    return MotionPlanRead(project_id=stored.project_id, plan=stored.plan, revision=stored.revision)
 
 
 @router.patch("/motion-plans/{plan_id}", response_model=MotionPlanMutationResult)
@@ -115,9 +113,7 @@ def update_motion_plan(
         raise HTTPException(status_code=422, detail="plan id does not match route")
     try:
         stored = store.get_motion_plan(plan_id)
-        updated = store.save_motion_plan(
-            stored.project_id, payload.plan, payload.expected_revision
-        )
+        updated = store.save_motion_plan(stored.project_id, payload.plan, payload.expected_revision)
     except ProjectConflictError as exc:
         raise HTTPException(status_code=409, detail="stale project revision") from exc
     except ProjectNotFoundError as exc:
@@ -130,9 +126,7 @@ def update_motion_plan(
 
 
 @router.post("/motion-plans/{plan_id}/validate", response_model=MotionPlanValidationRead)
-def validate_motion_plan_route(
-    plan_id: str, store: ProjectStoreDep
-) -> MotionPlanValidationRead:
+def validate_motion_plan_route(plan_id: str, store: ProjectStoreDep) -> MotionPlanValidationRead:
     try:
         stored = store.get_motion_plan(plan_id)
         scene = store.get_scene(stored.plan.scene_id)
@@ -215,9 +209,7 @@ def apply_motion_plan_patch(
         raise HTTPException(status_code=404, detail="motion plan not found") from exc
     application = apply_plan_patch(stored.plan, payload.patch)
     if application.plan is None:
-        raise HTTPException(
-            status_code=422, detail=[asdict(issue) for issue in application.issues]
-        )
+        raise HTTPException(status_code=422, detail=[asdict(issue) for issue in application.issues])
     try:
         updated = store.save_motion_plan(
             stored.project_id, application.plan, payload.expected_revision

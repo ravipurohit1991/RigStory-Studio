@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from app.domain.character import CharacterDefinition
 from app.domain.math2d.vec2 import Vec2
 from app.domain.motion import MotionAction, compile_motion_actions, solve_two_bone_ik
 from app.domain.project import load_project_document
@@ -7,7 +8,7 @@ from tests.domain.test_scene_phase6 import room_scene
 from tests.sample_paths import load_sample
 
 
-def _character():
+def _character() -> CharacterDefinition:
     project = load_project_document(load_sample("projects/biped-demo.rigstory.json")).document
     return project.characters[0]
 

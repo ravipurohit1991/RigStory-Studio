@@ -21,9 +21,7 @@ class _ExampleAdapter:
     adapter_version = "0.0.1"
 
     def capability(self, document: ProjectDocument) -> AdapterCapability:
-        unsupported = tuple(
-            f"motion plan {plan.id}" for plan in document.motion_plans
-        )
+        unsupported = tuple(f"motion plan {plan.id}" for plan in document.motion_plans)
         return AdapterCapability(
             supported=True,
             detail="exports character names only",
