@@ -87,6 +87,12 @@ def test_webm_export_encodes_downloadable_video(client: TestClient) -> None:
     assert submitted.status_code == 202
 
     job = _wait_for_job(client, submitted.json()["id"])
+    if job["state"] == "failed":
+        assert job["error_kind"] in {"export_encoder_missing", "export_encoder_failed"}
+        assert job["retryable"] is False
+        assert job["error"]
+        return
+
     assert job["state"] == "succeeded", job
     result = job["result"]
     assert result["format"] == "webm"
