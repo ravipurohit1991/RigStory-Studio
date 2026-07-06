@@ -1,0 +1,27 @@
+{
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["backend/tests"],
+  "black-formatter.args": ["--line-length", "100"],
+  "isort.args": ["--profile", "black", "--line-length", "100"],
+  "ruff.nativeServer": "on",
+  "ruff.configuration": "${workspaceFolder}/backend/pyproject.toml",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "actors": [],
+  "ground_y": 0.0,
+  "id": "scene_empty",
+  "name": "Empty scene",
+  "objects": [],
+  "world_bounds": [
+    -10.0,
+    -1.0,
+    10.0,
+    8.0
+  ]
+}

@@ -1,0 +1,29 @@
+name: Feature request
+description: Propose work that fits the active plan phase.
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe the user-visible outcome.
+    validations:
+      required: true
+  - type: input
+    id: phase
+    attributes:
+      label: Active Phase Fit
+      placeholder: "Release hardening"
+    validations:
+      required: true
+  - type: textarea
+    id: contracts
+    attributes:
+      label: Domain Contracts / Schema Impact
+      description: Name any API, project, worker, LLM, or import/export schema touched.
+  - type: textarea
+    id: tests
+    attributes:
+      label: Required Evidence
+      description: Unit, property, integration, E2E, visual, performance, docs, or demo evidence.

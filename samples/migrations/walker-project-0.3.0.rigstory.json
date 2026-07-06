@@ -1,0 +1,99 @@
+{
+  "format": "rigstory-project",
+  "schema_version": "0.3.0",
+  "engine_version": "0.1.0",
+  "project": {
+    "id": "project_migration_walker",
+    "name": "Migration Walker"
+  },
+  "characters": [
+    {
+      "id": "char_migration_walker",
+      "name": "Walker",
+      "rig": {
+        "id": "rig_migration_walker",
+        "name": "Walker Rig",
+        "bones": [
+          {
+            "id": "root",
+            "parent_id": null,
+            "setup_transform": { "position": [0, 0], "rotation_deg": 0, "scale": [1, 1] },
+            "length": 0,
+            "joint_limit": null,
+            "tags": []
+          },
+          {
+            "id": "arm",
+            "parent_id": "root",
+            "setup_transform": { "position": [0, 1.2], "rotation_deg": 0, "scale": [1, 1] },
+            "length": 0.8,
+            "joint_limit": null,
+            "tags": []
+          }
+        ]
+      },
+      "attachments": []
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene_migration_room",
+      "name": "Migration Room",
+      "world_bounds": [-5, -1, 5, 4],
+      "ground_y": 0,
+      "actors": [
+        {
+          "id": "actor_walker",
+          "character_id": "char_migration_walker",
+          "display_name": "Walker",
+          "root_transform": { "position": [-2, 0], "rotation_deg": 0, "scale": [1, 1] },
+          "facing": "right",
+          "state": "standing"
+        }
+      ],
+      "objects": [
+        {
+          "id": "floor_main",
+          "name": "Floor",
+          "kind": "floor",
+          "transform": { "position": [0, 0], "rotation_deg": 0, "scale": [1, 1] },
+          "bounds": [-5, -0.25, 5, 0],
+          "colliders": [
+            { "type": "box", "center": [0, -0.125], "size": [10, 0.25], "rotation_deg": 0 }
+          ],
+          "anchors": [],
+          "affordances": [],
+          "collision_layer": "ground",
+          "body_type": "static"
+        }
+      ]
+    }
+  ],
+  "clips": [
+    {
+      "id": "clip_migration_wave",
+      "scene_id": "scene_migration_room",
+      "name": "Wave",
+      "duration": 1.5,
+      "loop": false,
+      "loop_range": null,
+      "tracks": [
+        {
+          "type": "bone_rotation",
+          "id": "track_wave_arm",
+          "actor_id": "actor_walker",
+          "bone_id": "arm",
+          "keyframes": [
+            { "id": "key_wave_a", "time": 0, "value": 0, "interpolation": "linear" },
+            { "id": "key_wave_b", "time": 1.5, "value": 45, "interpolation": "linear" }
+          ]
+        }
+      ],
+      "events": [],
+      "markers": []
+    }
+  ],
+  "motion_plans": [],
+  "generation_records": [],
+  "asset_manifest": []
+}

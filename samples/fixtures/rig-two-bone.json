@@ -1,0 +1,42 @@
+{
+  "bones": [
+    {
+      "id": "bone_a",
+      "joint_limit": null,
+      "length": 10.0,
+      "parent_id": null,
+      "setup_transform": {
+        "position": [
+          0.0,
+          0.0
+        ],
+        "rotation_deg": 30.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "tags": []
+    },
+    {
+      "id": "bone_b",
+      "joint_limit": null,
+      "length": 5.0,
+      "parent_id": "bone_a",
+      "setup_transform": {
+        "position": [
+          10.0,
+          0.0
+        ],
+        "rotation_deg": 40.0,
+        "scale": [
+          1.0,
+          1.0
+        ]
+      },
+      "tags": []
+    }
+  ],
+  "id": "rig_two_bone",
+  "name": "Two-bone test rig"
+}

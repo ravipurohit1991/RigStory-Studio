@@ -1,0 +1,1602 @@
+{
+  "asset_manifest": [],
+  "characters": [
+    {
+      "attachments": [
+        {
+          "asset_id": null,
+          "bone_id": "neck",
+          "id": "part_neck",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.14,
+              0.077933
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 0
+        },
+        {
+          "asset_id": null,
+          "bone_id": "chest",
+          "id": "part_torso",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#315b7d",
+            "opacity": 0.96,
+            "shape": "rectangle",
+            "size": [
+              0.3655,
+              0.552426
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 4
+        },
+        {
+          "asset_id": null,
+          "bone_id": "spine_lower",
+          "id": "part_waist",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#315b7d",
+            "opacity": 0.94,
+            "shape": "rectangle",
+            "size": [
+              0.43819,
+              0.299376
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "hips",
+          "id": "part_pelvis",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2630",
+            "opacity": 0.96,
+            "shape": "rectangle",
+            "size": [
+              0.216,
+              0.49005
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 2
+        },
+        {
+          "asset_id": null,
+          "bone_id": "head",
+          "id": "part_head",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.3864,
+              0.36
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0084,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 8
+        },
+        {
+          "asset_id": null,
+          "bone_id": "upper_arm_l",
+          "id": "part_upper_arm_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.53131,
+              0.10824
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 5
+        },
+        {
+          "asset_id": null,
+          "bone_id": "forearm_l",
+          "id": "part_forearm_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.49044,
+              0.095251
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 5
+        },
+        {
+          "asset_id": null,
+          "bone_id": "hand_l",
+          "id": "part_hand_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.19095,
+              0.110405
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 6
+        },
+        {
+          "asset_id": null,
+          "bone_id": "thigh_l",
+          "id": "part_thigh_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2630",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.834943,
+              0.14784
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 1
+        },
+        {
+          "asset_id": null,
+          "bone_id": "shin_l",
+          "id": "part_shin_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2630",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.753486,
+              0.127142
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 1
+        },
+        {
+          "asset_id": null,
+          "bone_id": "foot_l",
+          "id": "part_foot_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#2b2b2b",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.3015,
+              0.106445
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "toe_l",
+          "id": "part_toe_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#2b2b2b",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.1206,
+              0.085747
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "upper_arm_r",
+          "id": "part_upper_arm_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.526023,
+              0.10824
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": -3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "forearm_r",
+          "id": "part_forearm_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.48556,
+              0.095251
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": -3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "hand_r",
+          "id": "part_hand_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5a3c",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.18905,
+              0.110405
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": -2
+        },
+        {
+          "asset_id": null,
+          "bone_id": "thigh_r",
+          "id": "part_thigh_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2630",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.826636,
+              0.14784
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": -1
+        },
+        {
+          "asset_id": null,
+          "bone_id": "shin_r",
+          "id": "part_shin_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2630",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.745988,
+              0.127142
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": -1
+        },
+        {
+          "asset_id": null,
+          "bone_id": "foot_r",
+          "id": "part_foot_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#2b2b2b",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.2985,
+              0.106445
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "toe_r",
+          "id": "part_toe_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#2b2b2b",
+            "opacity": 1.0,
+            "shape": "capsule",
+            "size": [
+              0.1194,
+              0.085747
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 3
+        },
+        {
+          "asset_id": null,
+          "bone_id": "head",
+          "id": "part_hair_back",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#241a17",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.1932,
+              0.3888
+            ]
+          },
+          "transform": {
+            "position": [
+              -0.0336,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 6
+        },
+        {
+          "asset_id": null,
+          "bone_id": "head",
+          "id": "part_hair_front",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#241a17",
+            "opacity": 1.0,
+            "shape": "rectangle",
+            "size": [
+              0.0924,
+              0.3456
+            ]
+          },
+          "transform": {
+            "position": [
+              0.189,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 10
+        },
+        {
+          "asset_id": null,
+          "bone_id": "eye_l",
+          "id": "part_eye_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2328",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.0378,
+              0.0378
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 12
+        },
+        {
+          "asset_id": null,
+          "bone_id": "eye_r",
+          "id": "part_eye_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#1f2328",
+            "opacity": 1.0,
+            "shape": "ellipse",
+            "size": [
+              0.0378,
+              0.0378
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 12
+        },
+        {
+          "asset_id": null,
+          "bone_id": "eye_l",
+          "id": "part_brow_l",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#241a17",
+            "opacity": 1.0,
+            "shape": "rectangle",
+            "size": [
+              0.05292,
+              0.010584
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.043469999999999995
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 13
+        },
+        {
+          "asset_id": null,
+          "bone_id": "eye_r",
+          "id": "part_brow_r",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#241a17",
+            "opacity": 1.0,
+            "shape": "rectangle",
+            "size": [
+              0.05292,
+              0.010584
+            ]
+          },
+          "transform": {
+            "position": [
+              0.0,
+              0.043469999999999995
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 13
+        },
+        {
+          "asset_id": null,
+          "bone_id": "head",
+          "id": "part_nose",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b5e42",
+            "opacity": 0.8,
+            "shape": "capsule",
+            "size": [
+              0.0504,
+              0.03024
+            ]
+          },
+          "transform": {
+            "position": [
+              0.24359999999999998,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 13
+        },
+        {
+          "asset_id": null,
+          "bone_id": "head",
+          "id": "part_mouth",
+          "kind": "primitive",
+          "pivot": [
+            0.0,
+            0.0
+          ],
+          "primitive": {
+            "fill": "#8b1e32",
+            "opacity": 1.0,
+            "shape": "rectangle",
+            "size": [
+              0.0588,
+              0.00945
+            ]
+          },
+          "transform": {
+            "position": [
+              0.3024,
+              0.0
+            ],
+            "rotation_deg": 0.0,
+            "scale": [
+              1.0,
+              1.0
+            ]
+          },
+          "visible": true,
+          "z_index": 13
+        }
+      ],
+      "id": "char_generated_demo",
+      "name": "Mira",
+      "rig": {
+        "bones": [
+          {
+            "id": "root",
+            "joint_limit": null,
+            "length": 0.0,
+            "parent_id": null,
+            "setup_transform": {
+              "position": [
+                0.0,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": []
+          },
+          {
+            "id": "hips",
+            "joint_limit": null,
+            "length": 0.2,
+            "parent_id": "root",
+            "setup_transform": {
+              "position": [
+                0.0,
+                1.700526315789474
+              ],
+              "rotation_deg": 90.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "id": "spine_lower",
+            "joint_limit": {
+              "max_rotation_deg": 30.0,
+              "min_rotation_deg": -30.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.307143,
+            "parent_id": "hips",
+            "setup_transform": {
+              "position": [
+                0.2,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "id": "spine_upper",
+            "joint_limit": {
+              "max_rotation_deg": 32.0,
+              "min_rotation_deg": -32.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.327619,
+            "parent_id": "spine_lower",
+            "setup_transform": {
+              "position": [
+                0.3071428571428571,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "id": "chest",
+            "joint_limit": null,
+            "length": 0.348095,
+            "parent_id": "spine_upper",
+            "setup_transform": {
+              "position": [
+                0.3276190476190476,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core"
+            ]
+          },
+          {
+            "id": "neck",
+            "joint_limit": {
+              "max_rotation_deg": 42.0,
+              "min_rotation_deg": -42.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.14,
+            "parent_id": "chest",
+            "setup_transform": {
+              "position": [
+                0.34809523809523807,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core",
+              "look_at"
+            ]
+          },
+          {
+            "id": "head",
+            "joint_limit": {
+              "max_rotation_deg": 35.0,
+              "min_rotation_deg": -35.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.42,
+            "parent_id": "neck",
+            "setup_transform": {
+              "position": [
+                0.14,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "core",
+              "look_at"
+            ]
+          },
+          {
+            "id": "eye_l",
+            "joint_limit": null,
+            "length": 0.04,
+            "parent_id": "head",
+            "setup_transform": {
+              "position": [
+                0.23520000000000002,
+                0.07919999999999999
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "face",
+              "l",
+              "look_at"
+            ]
+          },
+          {
+            "id": "eye_r",
+            "joint_limit": null,
+            "length": 0.04,
+            "parent_id": "head",
+            "setup_transform": {
+              "position": [
+                0.23520000000000002,
+                -0.07919999999999999
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "face",
+              "r",
+              "look_at"
+            ]
+          },
+          {
+            "id": "clavicle_l",
+            "joint_limit": null,
+            "length": 0.198873,
+            "parent_id": "chest",
+            "setup_transform": {
+              "position": [
+                0.3132857142857143,
+                0.06076683130434784
+              ],
+              "rotation_deg": 94.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "l"
+            ]
+          },
+          {
+            "id": "upper_arm_l",
+            "joint_limit": {
+              "max_rotation_deg": 170.0,
+              "min_rotation_deg": -170.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.53131,
+            "parent_id": "clavicle_l",
+            "setup_transform": {
+              "position": [
+                0.19887326608695657,
+                0.0
+              ],
+              "rotation_deg": 77.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "l",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "forearm_l",
+            "joint_limit": {
+              "max_rotation_deg": 6.0,
+              "min_rotation_deg": -150.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.49044,
+            "parent_id": "upper_arm_l",
+            "setup_transform": {
+              "position": [
+                0.53131,
+                0.0
+              ],
+              "rotation_deg": -5.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "l",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "hand_l",
+            "joint_limit": {
+              "max_rotation_deg": 55.0,
+              "min_rotation_deg": -55.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.19095,
+            "parent_id": "forearm_l",
+            "setup_transform": {
+              "position": [
+                0.4904399999999999,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "l"
+            ]
+          },
+          {
+            "id": "thigh_l",
+            "joint_limit": {
+              "max_rotation_deg": 120.0,
+              "min_rotation_deg": -120.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.834943,
+            "parent_id": "hips",
+            "setup_transform": {
+              "position": [
+                -0.044000000000000004,
+                0.10536074999999999
+              ],
+              "rotation_deg": 180.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "l",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "shin_l",
+            "joint_limit": {
+              "max_rotation_deg": 150.0,
+              "min_rotation_deg": -6.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.753486,
+            "parent_id": "thigh_l",
+            "setup_transform": {
+              "position": [
+                0.8349434210526316,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "l",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "foot_l",
+            "joint_limit": {
+              "max_rotation_deg": 55.0,
+              "min_rotation_deg": -55.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.3015,
+            "parent_id": "shin_l",
+            "setup_transform": {
+              "position": [
+                0.7534855263157895,
+                0.0
+              ],
+              "rotation_deg": 90.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "l"
+            ]
+          },
+          {
+            "id": "toe_l",
+            "joint_limit": {
+              "max_rotation_deg": 35.0,
+              "min_rotation_deg": -15.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.1206,
+            "parent_id": "foot_l",
+            "setup_transform": {
+              "position": [
+                0.30149999999999993,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "l"
+            ]
+          },
+          {
+            "id": "clavicle_r",
+            "joint_limit": null,
+            "length": 0.198873,
+            "parent_id": "chest",
+            "setup_transform": {
+              "position": [
+                0.3132857142857143,
+                -0.06076683130434784
+              ],
+              "rotation_deg": -94.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "r"
+            ]
+          },
+          {
+            "id": "upper_arm_r",
+            "joint_limit": {
+              "max_rotation_deg": 170.0,
+              "min_rotation_deg": -170.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.526023,
+            "parent_id": "clavicle_r",
+            "setup_transform": {
+              "position": [
+                0.19887326608695657,
+                0.0
+              ],
+              "rotation_deg": -77.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "r",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "forearm_r",
+            "joint_limit": {
+              "max_rotation_deg": 150.0,
+              "min_rotation_deg": -6.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.48556,
+            "parent_id": "upper_arm_r",
+            "setup_transform": {
+              "position": [
+                0.5260233333333333,
+                0.0
+              ],
+              "rotation_deg": 5.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "r",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "hand_r",
+            "joint_limit": {
+              "max_rotation_deg": 55.0,
+              "min_rotation_deg": -55.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.18905,
+            "parent_id": "forearm_r",
+            "setup_transform": {
+              "position": [
+                0.48555999999999994,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "arm",
+              "r"
+            ]
+          },
+          {
+            "id": "thigh_r",
+            "joint_limit": {
+              "max_rotation_deg": 120.0,
+              "min_rotation_deg": -120.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.826636,
+            "parent_id": "hips",
+            "setup_transform": {
+              "position": [
+                -0.044000000000000004,
+                -0.10536074999999999
+              ],
+              "rotation_deg": 180.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "r",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "shin_r",
+            "joint_limit": {
+              "max_rotation_deg": 6.0,
+              "min_rotation_deg": -150.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.745988,
+            "parent_id": "thigh_r",
+            "setup_transform": {
+              "position": [
+                0.8266355263157896,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "r",
+              "ik_chain"
+            ]
+          },
+          {
+            "id": "foot_r",
+            "joint_limit": {
+              "max_rotation_deg": 55.0,
+              "min_rotation_deg": -55.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.2985,
+            "parent_id": "shin_r",
+            "setup_transform": {
+              "position": [
+                0.7459881578947369,
+                0.0
+              ],
+              "rotation_deg": 90.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "r"
+            ]
+          },
+          {
+            "id": "toe_r",
+            "joint_limit": {
+              "max_rotation_deg": 35.0,
+              "min_rotation_deg": -15.0,
+              "soft_zone_deg": 0.0
+            },
+            "length": 0.1194,
+            "parent_id": "foot_r",
+            "setup_transform": {
+              "position": [
+                0.2985,
+                0.0
+              ],
+              "rotation_deg": 0.0,
+              "scale": [
+                1.0,
+                1.0
+              ]
+            },
+            "tags": [
+              "leg",
+              "r"
+            ]
+          }
+        ],
+        "id": "rig_proc_59c3149bec3dca58",
+        "name": "Procedural human rig"
+      }
+    }
+  ],
+  "clips": [],
+  "engine_version": "0.1.0",
+  "format": "rigstory-project",
+  "generation_records": [
+    {
+      "attempts": [
+        {
+          "error_summary": [],
+          "index": 0,
+          "kind": "initial",
+          "raw_response": "{\"age_category\":\"adult\",\"appearance\":{\"face\":{\"eye_color\":\"#3a2a20\",\"eye_shape\":\"almond\",\"mouth_style\":\"soft\",\"nose_style\":\"simple\",\"shape\":\"oval\"},\"hair\":{\"color\":\"#241a17\",\"style\":\"bob\"},\"skin_palette\":{\"base\":\"#8b5a3c\",\"highlight\":\"#b97a55\",\"shadow\":\"#6e402c\"}},\"character_name\":\"Mira\",\"clothing\":[{\"category\":\"shirt\",\"id\":\"top\",\"layer\":\"torso_front\",\"primary_color\":\"#315b7d\",\"secondary_color\":\"#e5d7c2\",\"silhouette\":\"fitted_long_sleeve\",\"slot\":\"top\"},{\"category\":\"trousers\",\"id\":\"bottom\",\"layer\":\"legs_front\",\"primary_color\":\"#1f2630\",\"secondary_color\":null,\"silhouette\":\"straight\",\"slot\":\"bottom\"},{\"category\":\"shoes\",\"id\":\"feet\",\"layer\":\"\",\"primary_color\":\"#2b2b2b\",\"secondary_color\":null,\"silhouette\":\"\",\"slot\":\"footwear\"}],\"presentation\":\"feminine\",\"proportions\":{\"arm_length_heads\":3.05,\"build\":\"slender\",\"head_units_tall\":7.25,\"hip_width_heads\":1.65,\"leg_length_heads\":3.85,\"shoulder_width_heads\":2.35,\"torso_length_heads\":2.15},\"rig_profile\":{\"allow_exaggeration\":true,\"joint_flexibility\":\"normal\",\"template\":\"human_biped_v1\"},\"schema_version\":\"1.0\",\"style\":{\"detail_level\":\"medium\",\"family\":\"flat_vector\",\"outline_weight\":2.0,\"symmetry\":0.9},\"warnings\":[]}",
+          "valid": true
+        }
+      ],
+      "blueprint": {
+        "age_category": "adult",
+        "appearance": {
+          "face": {
+            "eye_color": "#3a2a20",
+            "eye_shape": "almond",
+            "mouth_style": "soft",
+            "nose_style": "simple",
+            "shape": "oval"
+          },
+          "hair": {
+            "color": "#241a17",
+            "style": "bob"
+          },
+          "skin_palette": {
+            "base": "#8b5a3c",
+            "highlight": "#b97a55",
+            "shadow": "#6e402c"
+          }
+        },
+        "character_name": "Mira",
+        "clothing": [
+          {
+            "category": "shirt",
+            "id": "top",
+            "layer": "torso_front",
+            "primary_color": "#315b7d",
+            "secondary_color": "#e5d7c2",
+            "silhouette": "fitted_long_sleeve",
+            "slot": "top"
+          },
+          {
+            "category": "trousers",
+            "id": "bottom",
+            "layer": "legs_front",
+            "primary_color": "#1f2630",
+            "secondary_color": null,
+            "silhouette": "straight",
+            "slot": "bottom"
+          },
+          {
+            "category": "shoes",
+            "id": "feet",
+            "layer": "",
+            "primary_color": "#2b2b2b",
+            "secondary_color": null,
+            "silhouette": "",
+            "slot": "footwear"
+          }
+        ],
+        "presentation": "feminine",
+        "proportions": {
+          "arm_length_heads": 3.05,
+          "build": "slender",
+          "head_units_tall": 7.25,
+          "hip_width_heads": 1.65,
+          "leg_length_heads": 3.85,
+          "shoulder_width_heads": 2.35,
+          "torso_length_heads": 2.15
+        },
+        "rig_profile": {
+          "allow_exaggeration": true,
+          "joint_flexibility": "normal",
+          "template": "human_biped_v1"
+        },
+        "schema_version": "1.0",
+        "style": {
+          "detail_level": "medium",
+          "family": "flat_vector",
+          "outline_weight": 2.0,
+          "symmetry": 0.9
+        },
+        "warnings": []
+      },
+      "builder_diagnostics": [],
+      "character_id": "char_generated_demo",
+      "created_at": "2026-07-04T00:00:00Z",
+      "failure_kind": "none",
+      "id": "gen_demo0001",
+      "kind": "character_blueprint",
+      "model_name": "example-planner-model",
+      "options": {
+        "keep_alive": "10m",
+        "num_ctx": null,
+        "temperature": 0.1,
+        "timeout_seconds": 60.0
+      },
+      "outcome_detail": "Validated on the first attempt.",
+      "plan_id": null,
+      "plan_patch": null,
+      "prompt_ids": [
+        "character_blueprint.system.v1",
+        "character_blueprint.user.v1"
+      ],
+      "retryable": false,
+      "status": "succeeded",
+      "timing": null,
+      "warnings": []
+    }
+  ],
+  "motion_plans": [],
+  "project": {
+    "id": "project_generated_demo",
+    "name": "Generated Character Demo"
+  },
+  "scenes": [],
+  "schema_version": "0.6.0"
+}

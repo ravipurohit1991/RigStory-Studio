@@ -1,0 +1,259 @@
+{
+  "requests": [
+  {
+    "age_category": "adult",
+    "bottom": "trousers",
+    "build": "slender",
+    "face_shape": "heart",
+    "footwear": "sneakers",
+    "hair_style": "bob",
+    "height": "average",
+    "name": "Mira Vector",
+    "outerwear": "none",
+    "palette": {
+      "accent": "#f2c94c",
+      "bottom": "#293c62",
+      "hair": "#2d1d16",
+      "shoes": "#2b2b2b",
+      "skin": "#b87952",
+      "top": "#2f6f73"
+    },
+    "presentation": "feminine",
+    "proportions": {
+      "arm_length": 1.04,
+      "hip_width": 1.08,
+      "waist_width": 0.88
+    },
+    "style": "flat_vector",
+    "top": "shirt"
+  },
+  {
+    "age_category": "adult",
+    "bottom": "trousers",
+    "build": "broad",
+    "face_shape": "square",
+    "footwear": "boots",
+    "hair_style": "short",
+    "height": "tall",
+    "name": "Jon Cutout",
+    "palette": {
+      "accent": "#d9a441",
+      "bottom": "#263238",
+      "hair": "#1f1a17",
+      "shoes": "#111111",
+      "skin": "#9f6b45",
+      "top": "#7b3443"
+    },
+    "presentation": "masculine",
+    "proportions": {
+      "hip_width": 0.94,
+      "leg_length": 1.08,
+      "shoulder_width": 1.14
+    },
+    "style": "paper_cutout",
+    "top": "jacket"
+  },
+  {
+    "age_category": "teen",
+    "bottom": "shorts",
+    "build": "average",
+    "face_shape": "round",
+    "footwear": "sneakers",
+    "hair_style": "curly",
+    "height": "short",
+    "name": "Noor Graphic",
+    "palette": {
+      "accent": "#ffffff",
+      "bottom": "#3a4a6b",
+      "hair": "#4b2f21",
+      "shoes": "#303030",
+      "skin": "#d6a06f",
+      "top": "#5b8c5a"
+    },
+    "presentation": "neutral",
+    "proportions": {
+      "arm_length": 0.94,
+      "head_size": 1.08,
+      "torso_length": 0.94
+    },
+    "style": "graphic_novel",
+    "top": "sweater"
+  },
+  {
+    "age_category": "adult",
+    "bottom": "skirt",
+    "build": "slender",
+    "face_shape": "long",
+    "footwear": "shoes",
+    "hair_style": "long",
+    "height": "tall",
+    "name": "Ari Silhouette",
+    "presentation": "neutral",
+    "proportions": {
+      "leg_length": 1.16,
+      "shoulder_width": 0.92
+    },
+    "style": "silhouette",
+    "top": "shirt"
+  },
+  {
+    "age_category": "older_adult",
+    "bottom": "trousers",
+    "build": "sturdy",
+    "face_shape": "oval",
+    "footwear": "shoes",
+    "hair_style": "coily",
+    "height": "short",
+    "name": "Lena Cartoon",
+    "outerwear": "vest",
+    "palette": {
+      "accent": "#edf2f7",
+      "bottom": "#4a5568",
+      "hair": "#bfc4c7",
+      "shoes": "#202020",
+      "skin": "#c98764",
+      "top": "#7952b3"
+    },
+    "presentation": "feminine",
+    "proportions": {
+      "head_size": 1.05,
+      "leg_length": 0.9,
+      "torso_length": 1.08
+    },
+    "style": "cartoon",
+    "top": "jacket"
+  },
+  {
+    "age_category": "teen",
+    "bottom": "trousers",
+    "build": "slender",
+    "face_shape": "oval",
+    "footwear": "sneakers",
+    "hair_style": "short",
+    "height": "average",
+    "name": "Kai Flat",
+    "palette": {
+      "accent": "#fffd82",
+      "bottom": "#2d3047",
+      "hair": "#161616",
+      "shoes": "#3d3d3d",
+      "skin": "#e0b38f",
+      "top": "#1b998b"
+    },
+    "presentation": "masculine",
+    "proportions": {
+      "arm_length": 1.12,
+      "asymmetry": 0.02,
+      "shoulder_width": 1.02
+    },
+    "style": "flat_vector",
+    "top": "tshirt"
+  },
+  {
+    "age_category": "adult",
+    "bottom": "skirt",
+    "build": "average",
+    "face_shape": "heart",
+    "footwear": "shoes",
+    "hair_style": "long",
+    "height": "short",
+    "name": "Sana Paper",
+    "outerwear": "coat",
+    "palette": {
+      "accent": "#eaac8b",
+      "bottom": "#6d597a",
+      "hair": "#25180f",
+      "shoes": "#1c1c1c",
+      "skin": "#8d5d42",
+      "top": "#b56576"
+    },
+    "presentation": "feminine",
+    "proportions": {
+      "head_size": 0.96,
+      "hip_width": 1.18,
+      "waist_width": 0.82
+    },
+    "style": "paper_cutout",
+    "top": "shirt"
+  },
+  {
+    "age_category": "older_adult",
+    "bottom": "trousers",
+    "build": "sturdy",
+    "face_shape": "square",
+    "footwear": "boots",
+    "hair_style": "short",
+    "height": "average",
+    "name": "Owen Novel",
+    "palette": {
+      "accent": "#c9e4ca",
+      "bottom": "#55828b",
+      "hair": "#dddddd",
+      "shoes": "#212529",
+      "skin": "#bc8a5f",
+      "top": "#364958"
+    },
+    "presentation": "masculine",
+    "proportions": {
+      "head_size": 0.98,
+      "shoulder_width": 1.18,
+      "torso_length": 1.1
+    },
+    "style": "graphic_novel",
+    "top": "sweater"
+  },
+  {
+    "age_category": "child",
+    "bottom": "shorts",
+    "build": "average",
+    "face_shape": "round",
+    "footwear": "sneakers",
+    "hair_style": "curly",
+    "height": "short",
+    "name": "Paz Child",
+    "palette": {
+      "accent": "#f4a261",
+      "bottom": "#2a9d8f",
+      "hair": "#6b3f2a",
+      "shoes": "#264653",
+      "skin": "#d99f7a",
+      "top": "#e76f51"
+    },
+    "presentation": "neutral",
+    "proportions": {
+      "arm_length": 0.88,
+      "head_size": 1.14,
+      "leg_length": 0.86
+    },
+    "style": "cartoon",
+    "top": "tshirt"
+  },
+  {
+    "age_category": "adult",
+    "bottom": "trousers",
+    "build": "broad",
+    "face_shape": "oval",
+    "footwear": "boots",
+    "hair_style": "bald",
+    "height": "average",
+    "name": "Rue Neutral",
+    "palette": {
+      "accent": "#f94144",
+      "bottom": "#43aa8b",
+      "hair": "#101010",
+      "shoes": "#2f2f2f",
+      "skin": "#6f4b3e",
+      "top": "#577590"
+    },
+    "presentation": "neutral",
+    "proportions": {
+      "asymmetry": 0.035,
+      "hip_width": 1.06,
+      "shoulder_width": 1.04,
+      "torso_length": 0.92
+    },
+    "style": "flat_vector",
+    "top": "jacket"
+  }
+  ]
+}
