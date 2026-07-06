@@ -46,17 +46,13 @@ def test_weighted_clothing_meshes_validate_and_skin_deterministically() -> None:
 
 
 def test_weighted_sleeve_survives_bent_elbow_without_rigid_gap() -> None:
-    result = build_procedural_character(
-        CharacterBuilderRequest(name="Bent Sleeve", top="sweater")
-    )
+    result = build_procedural_character(CharacterBuilderRequest(name="Bent Sleeve", top="sweater"))
     sleeve = next(part for part in result.character.attachments if part.id == "mesh_sleeve_l")
     rig = result.character.rig
     bent_bones = tuple(
         bone.model_copy(
             update={
-                "setup_transform": bone.setup_transform.model_copy(
-                    update={"rotation_deg": 62.0}
-                )
+                "setup_transform": bone.setup_transform.model_copy(update={"rotation_deg": 62.0})
             }
         )
         if bone.id == "forearm_l"

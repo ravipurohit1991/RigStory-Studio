@@ -22,12 +22,12 @@ from app.domain.motion_plan import (
 )
 from app.domain.motion_plan_validation import validate_motion_plan
 from app.domain.project import load_project_document
-from app.domain.scene_snapshot import build_scene_snapshot
+from app.domain.scene_snapshot import SceneSnapshot, build_scene_snapshot
 from tests.domain.test_scene_phase6 import room_scene
 from tests.sample_paths import load_sample
 
 
-def _snapshot():
+def _snapshot() -> SceneSnapshot:
     project = load_project_document(load_sample("projects/biped-demo.rigstory.json")).document
     characters = {character.id: character for character in project.characters}
     return build_scene_snapshot(room_scene(), characters=characters)
@@ -100,9 +100,7 @@ def test_validate_rejects_unknown_references_instead_of_fabricating() -> None:
     snapshot = _snapshot()
     unknown_target = MotionPlanDraft(
         summary="walk to a sofa that does not exist",
-        actions=(
-            SitAction(id="a1", actor_id="actor_mira", target_ref="sofa_1.seat"),
-        ),
+        actions=(SitAction(id="a1", actor_id="actor_mira", target_ref="sofa_1.seat"),),
     )
     result = validate_motion_plan(unknown_target, snapshot)
     assert "PLAN_UNKNOWN_TARGET" in {issue.code for issue in result.errors}
@@ -126,9 +124,7 @@ def test_validate_checks_affordances_and_reachability() -> None:
 
     far_reach = MotionPlanDraft(
         summary="reach the far door handle without walking",
-        actions=(
-            ReachAction(id="a1", actor_id="actor_mira", target_ref="door_main.handle"),
-        ),
+        actions=(ReachAction(id="a1", actor_id="actor_mira", target_ref="door_main.handle"),),
     )
     result = validate_motion_plan(far_reach, snapshot)
     assert result.errors == ()
@@ -152,9 +148,7 @@ def test_validate_flags_two_actor_ambiguity_and_contact_feasibility() -> None:
 
     infeasible = MotionPlanDraft(
         summary="handshake without approaching first",
-        actions=(
-            HandshakeAction(id="a1", actor_id="actor_mira", partner_id="actor_jon"),
-        ),
+        actions=(HandshakeAction(id="a1", actor_id="actor_mira", partner_id="actor_jon"),),
     )
     result = validate_motion_plan(infeasible, snapshot)
     assert "PLAN_CONTACT_INFEASIBLE" in {issue.code for issue in result.errors}
@@ -181,16 +175,12 @@ def test_apply_patch_changes_only_the_targeted_action() -> None:
     plan = _plan(CANNED_MOTION_PLAN_DRAFT)
     patch = MotionPlanPatch(
         summary="make the wave smaller",
-        operations=(
-            PatchSetParameters(action_id="a3", amplitude=0.2, repetitions=1),
-        ),
+        operations=(PatchSetParameters(action_id="a3", amplitude=0.2, repetitions=1),),
     )
     application = apply_plan_patch(plan, patch)
     assert application.issues == ()
     assert application.plan is not None
-    patched_wave = next(
-        action for action in application.plan.actions if action.id == "a3"
-    )
+    patched_wave = next(action for action in application.plan.actions if action.id == "a3")
     assert isinstance(patched_wave, WaveAction)
     assert patched_wave.amplitude == 0.2
     assert patched_wave.repetitions == 1

@@ -3,6 +3,9 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
+from app.domain.character import CharacterDefinition
+from app.domain.clip import ClipMarker
+from app.domain.motion import MotionCompileResult
 from app.domain.motion_plan import (
     CANNED_HANDSHAKE_PLAN_DRAFT,
     CANNED_MOTION_PLAN_DRAFT,
@@ -25,7 +28,7 @@ from tests.domain.test_scene_phase6 import room_scene
 from tests.sample_paths import load_sample
 
 
-def _characters():
+def _characters() -> dict[str, CharacterDefinition]:
     project = load_project_document(load_sample("projects/biped-demo.rigstory.json")).document
     return {character.id: character for character in project.characters}
 
@@ -41,7 +44,7 @@ def _plan(draft: MotionPlanDraft, prompt: str = "test prompt") -> MotionPlan:
     )
 
 
-def _compile(plan: MotionPlan, clip_id: str = "clip_plan_test"):
+def _compile(plan: MotionPlan, clip_id: str = "clip_plan_test") -> MotionCompileResult:
     return compile_motion_plan(
         scene=room_scene(),
         characters=_characters(),
@@ -142,7 +145,7 @@ def test_editing_unrelated_gesture_keeps_handshake_markers_stable() -> None:
     assert application.plan is not None
     patched = _compile(application.plan, clip_id="clip_handshake")
 
-    def marker_time(result_markers, name: str) -> float:
+    def marker_time(result_markers: tuple[ClipMarker, ...], name: str) -> float:
         return next(marker.time for marker in result_markers if marker.name == name)
 
     for name in ("shake_contact_start", "shake_contact_end", "a3_sync"):
@@ -172,8 +175,6 @@ def test_more_than_two_actors_is_rejected_at_the_scene_schema() -> None:
         SceneDefinition.model_validate(
             {
                 **scene.model_dump(mode="json"),
-                "actors": [
-                    actor.model_dump(mode="json") for actor in (*scene.actors, third)
-                ],
+                "actors": [actor.model_dump(mode="json") for actor in (*scene.actors, third)],
             }
         )

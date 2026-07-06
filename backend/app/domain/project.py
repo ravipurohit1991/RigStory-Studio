@@ -203,8 +203,7 @@ def validate_project_document(document: ProjectDocument) -> list[ValidationIssue
             issues.append(
                 ValidationIssue(
                     "CLIP_UNKNOWN_PLAN",
-                    f"clip {clip.id!r} references unknown motion plan "
-                    f"{clip.source_plan_id!r}",
+                    f"clip {clip.id!r} references unknown motion plan {clip.source_plan_id!r}",
                     f"clips[{index}].source_plan_id",
                 )
             )

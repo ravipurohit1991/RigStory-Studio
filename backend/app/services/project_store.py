@@ -198,8 +198,7 @@ class FileProjectStore:
             # then persist the migrated document as a normal new revision so the
             # upgrade is recoverable and visible in project history.
             backup_path = _backups_dir(self.root, project_id) / (
-                f"pre-upgrade-{loaded.migration.from_version}"
-                f"-{metadata.current_revision}.json"
+                f"pre-upgrade-{loaded.migration.from_version}-{metadata.current_revision}.json"
             )
             if not backup_path.exists():
                 _atomic_write_text(backup_path, original_text)
@@ -481,8 +480,7 @@ class FileProjectStore:
         stored = self.get_project(project_id)
         if any(existing.id == clip.id for existing in stored.document.clips):
             clips = tuple(
-                clip if existing.id == clip.id else existing
-                for existing in stored.document.clips
+                clip if existing.id == clip.id else existing for existing in stored.document.clips
             )
         else:
             clips = (*stored.document.clips, clip)

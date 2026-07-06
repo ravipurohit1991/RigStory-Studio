@@ -4,6 +4,7 @@ import io
 import json
 import zipfile
 from pathlib import Path
+from typing import Any, cast
 
 import httpx
 import pytest
@@ -26,11 +27,13 @@ from app.services.project_store import FileProjectStore
 from tests.sample_paths import load_sample
 
 
-def _create_project(client: TestClient, sample: str = "projects/biped-demo.rigstory.json") -> dict:
+def _create_project(
+    client: TestClient, sample: str = "projects/biped-demo.rigstory.json"
+) -> dict[str, Any]:
     raw = load_sample(sample)
     response = client.post("/api/v1/projects", json={"document": raw})
     assert response.status_code == 201
-    return response.json()
+    return cast(dict[str, Any], response.json())
 
 
 def _export_archive(client: TestClient, project_id: str) -> bytes:
@@ -172,7 +175,7 @@ def test_archive_import_rejects_oversized_body(client: TestClient) -> None:
     assert "byte limit" in response.json()["detail"]
 
 
-def _archive_for_document(raw_document: dict) -> bytes:
+def _archive_for_document(raw_document: dict[str, Any]) -> bytes:
     """Build an archive by hand so older schema versions can be simulated."""
     document_bytes = canonical_json_pretty(raw_document).encode("utf-8")
     manifest = {

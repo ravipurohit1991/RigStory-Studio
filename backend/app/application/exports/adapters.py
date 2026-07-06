@@ -69,9 +69,7 @@ class FormatAdapterRegistry:
 
     def register(self, adapter: FormatAdapter) -> None:
         if adapter.format_id in self._adapters:
-            raise AdapterRegistryError(
-                f"adapter {adapter.format_id!r} is already registered"
-            )
+            raise AdapterRegistryError(f"adapter {adapter.format_id!r} is already registered")
         self._adapters[adapter.format_id] = adapter
 
     def get(self, format_id: str) -> FormatAdapter:

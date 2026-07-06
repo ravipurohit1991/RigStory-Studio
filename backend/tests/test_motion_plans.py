@@ -33,8 +33,8 @@ def _install(tmp_path: Path, provider: ScriptedLLMProvider) -> None:
     app.dependency_overrides[get_motion_plan_service] = lambda: MotionPlanService(
         provider=provider, prompt_registry=PromptRegistry(), store=store
     )
-    app.dependency_overrides[get_motion_plan_compile_service] = (
-        lambda: MotionPlanCompileService(store=store)
+    app.dependency_overrides[get_motion_plan_compile_service] = lambda: MotionPlanCompileService(
+        store=store
     )
 
 
@@ -117,9 +117,7 @@ def test_unknown_target_is_rejected_not_fabricated(client: TestClient, tmp_path:
     assert job["error_kind"] == "invalid_response"
     attempts = job["error_detail"]["attempts"]
     assert any(
-        "PLAN_UNKNOWN_TARGET" in error
-        for attempt in attempts
-        for error in attempt["error_summary"]
+        "PLAN_UNKNOWN_TARGET" in error for attempt in attempts for error in attempt["error_summary"]
     )
 
 
@@ -334,8 +332,7 @@ def test_handshake_fixture_plans_and_compiles_two_actors(
         json={
             "model": "planner",
             "prompt": (
-                "Mira approaches Jon, shakes his right hand, "
-                "then they both look toward the door."
+                "Mira approaches Jon, shakes his right hand, then they both look toward the door."
             ),
             "expected_revision": revision,
             "use_fixture": True,
@@ -360,9 +357,7 @@ def test_handshake_fixture_plans_and_compiles_two_actors(
 
     project = client.get(f"/api/v1/projects/{project_id}").json()
     clip = next(
-        clip
-        for clip in project["document"]["clips"]
-        if clip["id"] == compiled["result"]["clip_id"]
+        clip for clip in project["document"]["clips"] if clip["id"] == compiled["result"]["clip_id"]
     )
     marker_kinds = {marker["kind"] for marker in clip["markers"]}
     assert {"contact", "sync"} <= marker_kinds

@@ -394,9 +394,7 @@ def action_resources(action: PlannedAction) -> tuple[tuple[str, str], ...]:
     """(actor_id, resource) pairs an action occupies while it runs."""
     if action.type in _LEG_ACTION_TYPES:
         return ((action.actor_id, "legs"),)
-    if isinstance(
-        action, ReachAction | PointAction | GraspAction | WaveAction | ReleaseAction
-    ):
+    if isinstance(action, ReachAction | PointAction | GraspAction | WaveAction | ReleaseAction):
         return ((action.actor_id, hand_effector(action.hand)),)
     if action.type == "look_at":
         return ((action.actor_id, "head"),)
@@ -794,9 +792,7 @@ def apply_plan_patch(plan: MotionPlan, patch: MotionPlanPatch) -> PatchApplicati
     if issues:
         return PatchApplication(plan=None, issues=tuple(issues), diff=tuple(diff))
     if not actions:
-        empty = ValidationIssue(
-            "PATCH_EMPTY_PLAN", "patch would remove every action", "operations"
-        )
+        empty = ValidationIssue("PATCH_EMPTY_PLAN", "patch would remove every action", "operations")
         return PatchApplication(plan=None, issues=(empty,), diff=tuple(diff))
     patched = MotionPlan.model_validate(
         {
@@ -815,13 +811,23 @@ def apply_plan_patch(plan: MotionPlan, patch: MotionPlanPatch) -> PatchApplicati
 CANNED_MOTION_PLAN_DRAFT = MotionPlanDraft(
     summary="Mira walks to the chair, sits down, and waves.",
     actions=(
-        LocomoteAction(
-            id="a1", actor_id="actor_mira", target_ref="chair_main.seat", duration=2.4
+        LocomoteAction(id="a1", actor_id="actor_mira", target_ref="chair_main.seat", duration=2.4),
+        SitAction(
+            id="a2",
+            actor_id="actor_mira",
+            target_ref="chair_main.seat",
+            duration=1.2,
+            starts_after=("a1",),
         ),
-        SitAction(id="a2", actor_id="actor_mira", target_ref="chair_main.seat", duration=1.2,
-                  starts_after=("a1",)),
-        WaveAction(id="a3", actor_id="actor_mira", hand="right", duration=1.6, repetitions=2,
-                   amplitude=0.45, starts_after=("a2",)),
+        WaveAction(
+            id="a3",
+            actor_id="actor_mira",
+            hand="right",
+            duration=1.6,
+            repetitions=2,
+            amplitude=0.45,
+            starts_after=("a2",),
+        ),
     ),
     style=MotionStyle(energy=0.35, confidence=0.65, exaggeration=0.2, tempo=0.9),
 )
@@ -830,20 +836,34 @@ CANNED_HANDSHAKE_PLAN_DRAFT = MotionPlanDraft(
     summary="Mira approaches Jon, shakes his right hand, then both look toward the door.",
     actions=(
         ApproachAction(
-            id="a1", actor_id="actor_mira", target_ref="actor_jon", duration=2.2,
+            id="a1",
+            actor_id="actor_mira",
+            target_ref="actor_jon",
+            duration=2.2,
             stop_distance=0.9,
         ),
         TurnAction(id="a2", actor_id="actor_jon", target_ref="actor_mira", duration=0.6),
         HandshakeAction(
-            id="a3", actor_id="actor_mira", partner_id="actor_jon", hand="right",
-            duration=2.4, oscillations=2, starts_after=("a1", "a2"),
+            id="a3",
+            actor_id="actor_mira",
+            partner_id="actor_jon",
+            hand="right",
+            duration=2.4,
+            oscillations=2,
+            starts_after=("a1", "a2"),
         ),
         LookAtAction(
-            id="a4", actor_id="actor_mira", target_ref="door_main", duration=1.0,
+            id="a4",
+            actor_id="actor_mira",
+            target_ref="door_main",
+            duration=1.0,
             starts_after=("a3",),
         ),
         LookAtAction(
-            id="a5", actor_id="actor_jon", target_ref="door_main", duration=1.0,
+            id="a5",
+            actor_id="actor_jon",
+            target_ref="door_main",
+            duration=1.0,
             starts_after=("a3",),
         ),
     ),
