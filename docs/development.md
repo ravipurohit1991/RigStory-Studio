@@ -38,6 +38,19 @@ Backend URLs:
 
 The frontend runs at http://localhost:5173 and proxies `/api` to the backend.
 
+## VS Code Debugging
+
+The workspace includes shared VS Code configuration for formatting and debugging:
+
+- **Backend: FastAPI** starts PostgreSQL with Docker Compose, runs Alembic migrations,
+  then launches Uvicorn on `127.0.0.1:8000`.
+- **Frontend: Vite in Chrome** starts Vite on `127.0.0.1:5173` and opens Chrome.
+- **Full Stack** starts both debug targets together.
+
+Create `.env` from `.env.example` before launching the backend configuration.
+The tasks use workspace-relative paths only, so no user-specific local paths are
+stored in the repository.
+
 ## Ollama Host Access
 
 Native development uses:
