@@ -152,6 +152,18 @@ export function updateProject(
   });
 }
 
+export function duplicateProject(projectId: string): Promise<ProjectRead> {
+  return sendJson<ProjectRead>("POST", `/projects/${projectId}/duplicate`);
+}
+
+export function deleteProject(projectId: string): Promise<void> {
+  return sendJson<void>("DELETE", `/projects/${projectId}`);
+}
+
+export function exportProjectArchiveUrl(projectId: string): string {
+  return `${API_BASE_URL}/projects/${projectId}/export`;
+}
+
 export function getProjectScenes(projectId: string): Promise<SceneDefinition[]> {
   return getJson<SceneDefinition[]>(`/projects/${projectId}/scenes`);
 }
@@ -194,10 +206,6 @@ export function compileDemoMotion(request: {
   actions: MotionAction[];
 }): Promise<MotionCompileRead> {
   return sendJson<MotionCompileRead>("POST", "/motion/demo/compile", request);
-}
-
-export function duplicateProject(projectId: string): Promise<ProjectRead> {
-  return sendJson<ProjectRead>("POST", `/projects/${projectId}/duplicate`);
 }
 
 export function generateMotionPlan(
