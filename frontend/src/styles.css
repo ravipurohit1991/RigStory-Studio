@@ -333,10 +333,45 @@ select {
     transform 0.15s ease;
 }
 
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-info {
+  display: grid;
+  gap: 2px;
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .item-row:hover {
   box-shadow: var(--rs-shadow-sm);
   border-color: var(--rs-border-strong);
   transform: translateY(-1px);
+}
+
+.item-row:hover .project-actions {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .project-actions {
+    opacity: 0.55;
+    transition: opacity 0.15s ease;
+  }
+}
+
+@media (hover: none) {
+  .project-actions {
+    opacity: 1;
+  }
 }
 
 .health-row {
