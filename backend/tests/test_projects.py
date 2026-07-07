@@ -101,3 +101,30 @@ def test_failed_save_preserves_last_good_revision_and_can_restore(client: TestCl
     restored = client.post(f"/api/v1/projects/{project_id}/restore/{first_revision}")
     assert restored.status_code == 200
     assert restored.json()["document"]["project"]["name"] == "Biped Demo"
+
+
+def test_duplicate_and_export_existing_project(client: TestClient) -> None:
+    created = client.post("/api/v1/projects", json={"name": "Exportable"}).json()
+    project_id = created["document"]["project"]["id"]
+
+    duplicate_response = client.post(f"/api/v1/projects/{project_id}/duplicate")
+    assert duplicate_response.status_code == 201
+    duplicate = duplicate_response.json()
+    assert duplicate["document"]["project"]["name"] == "Exportable Copy"
+    assert duplicate["document"]["project"]["id"] != project_id
+
+    export_response = client.get(f"/api/v1/projects/{project_id}/export")
+    assert export_response.status_code == 200
+    assert export_response.headers["Content-Disposition"].startswith("attachment")
+    assert export_response.headers["Content-Disposition"].endswith('.rigstory.zip"')
+    assert export_response.content.startswith(b"PK")
+
+    duplicate_id = duplicate["document"]["project"]["id"]
+    delete_response = client.delete(f"/api/v1/projects/{duplicate_id}")
+    assert delete_response.status_code == 204
+    assert client.get(f"/api/v1/projects/{duplicate_id}").status_code == 404
+
+
+def test_delete_project_is_idempotent_when_missing(client: TestClient) -> None:
+    response = client.delete("/api/v1/projects/project_does_not_exist")
+    assert response.status_code == 404
