@@ -153,4 +153,85 @@ describe("ProjectsPage", () => {
 
     await waitFor(() => expect(called).toBe(true));
   });
+
+  it("filters projects by name when the search input is used", async () => {
+    renderWithSeed(<ProjectsPage />, (client) => {
+      client.setQueryData(["projects"], seedProjects);
+    });
+
+    const searchInput = await screen.findByLabelText("Filter projects");
+    fireEvent.change(searchInput, { target: { value: "alpha" } });
+
+    expect(screen.getByText("Alpha Project")).toBeInTheDocument();
+    expect(screen.queryByText("Beta Project")).not.toBeInTheDocument();
+    expect(await screen.findByText("1 of 2")).toBeInTheDocument();
+  });
+
+  it("filters projects by id substring regardless of case", async () => {
+    renderWithSeed(<ProjectsPage />, (client) => {
+      client.setQueryData(["projects"], seedProjects);
+    });
+
+    const searchInput = await screen.findByLabelText("Filter projects");
+    fireEvent.change(searchInput, { target: { value: "BETA" } });
+
+    expect(await screen.findByText("Beta Project")).toBeInTheDocument();
+    expect(screen.queryByText("Alpha Project")).not.toBeInTheDocument();
+  });
+
+  it("shows a filtered-empty state with a working clear filter button", async () => {
+    renderWithSeed(<ProjectsPage />, (client) => {
+      client.setQueryData(["projects"], seedProjects);
+    });
+
+    const searchInput = await screen.findByLabelText("Filter projects");
+    fireEvent.change(searchInput, { target: { value: "nothing-matches" } });
+
+    expect(await screen.findByText(/No projects match/)).toBeInTheDocument();
+    expect(screen.queryByText("Alpha Project")).not.toBeInTheDocument();
+
+    const clearButton = screen.getByRole("button", { name: "Clear filter" });
+    fireEvent.click(clearButton);
+
+    await waitFor(() => {
+      expect(screen.getByText("Alpha Project")).toBeInTheDocument();
+      expect(screen.getByText("Beta Project")).toBeInTheDocument();
+    });
+    expect(searchInput).toHaveValue("");
+  });
+
+  it("clears the search via the inline clear button", async () => {
+    renderWithSeed(<ProjectsPage />, (client) => {
+      client.setQueryData(["projects"], seedProjects);
+    });
+
+    const searchInput = await screen.findByLabelText("Filter projects");
+    fireEvent.change(searchInput, { target: { value: "beta" } });
+
+    const inlineClear = await screen.findByLabelText("Clear search");
+    fireEvent.click(inlineClear);
+
+    await waitFor(() => {
+      expect(searchInput).toHaveValue("");
+    });
+    expect(screen.getByText("Alpha Project")).toBeInTheDocument();
+    expect(screen.getByText("Beta Project")).toBeInTheDocument();
+  });
+
+  it("dismisses the delete confirmation when the search input changes", async () => {
+    renderWithSeed(<ProjectsPage />, (client) => {
+      client.setQueryData(["projects"], seedProjects);
+    });
+
+    const deleteButton = await screen.findByLabelText("Delete Alpha Project");
+    fireEvent.click(deleteButton);
+    expect(await screen.findByText("Delete project?")).toBeInTheDocument();
+
+    const searchInput = screen.getByLabelText("Filter projects");
+    fireEvent.change(searchInput, { target: { value: "beta" } });
+
+    await waitFor(() => {
+      expect(screen.queryByText("Delete project?")).not.toBeInTheDocument();
+    });
+  });
 });
