@@ -7,14 +7,15 @@ import {
   DialogSurface,
   DialogTitle,
   DialogTrigger,
+  Input,
   Spinner,
   Text,
   Title2,
   Tooltip
 } from "@fluentui/react-components";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Copy, Download, Trash2 } from "lucide-react";
-import { useCallback, useState } from "react";
+import { Copy, Download, Search, SearchX, Trash2, X } from "lucide-react";
+import { useCallback, useMemo, useState } from "react";
 
 import {
   deleteProject,
@@ -24,13 +25,40 @@ import {
   type ProjectSummary
 } from "../api/client";
 
+const SEARCH_PLACEHOLDER = "Filter projects by name or ID";
+const SEARCH_INPUT_LABEL = "Filter projects";
+const SEARCH_CLEAR_LABEL = "Clear search";
+const EMPTY_STATE_CLEAR_LABEL = "Clear filter";
+
+function normalize(value: string): string {
+  return value.trim().toLowerCase();
+}
+
+function matchesQuery(project: ProjectSummary, query: string): boolean {
+  if (query === "") {
+    return true;
+  }
+  return (
+    project.name.toLowerCase().includes(query) || project.id.toLowerCase().includes(query)
+  );
+}
+
 export function ProjectsPage() {
   const queryClient = useQueryClient();
   const [pendingDelete, setPendingDelete] = useState<ProjectSummary | null>(null);
+  const [searchValue, setSearchValue] = useState("");
   const { data: projects, error, isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: getProjects
   });
+
+  const normalizedQuery = useMemo(() => normalize(searchValue), [searchValue]);
+  const filteredProjects = useMemo(() => {
+    if (!projects) {
+      return undefined;
+    }
+    return projects.filter((project) => matchesQuery(project, normalizedQuery));
+  }, [projects, normalizedQuery]);
 
   const onActionSuccess = useCallback(async () => {
     await queryClient.invalidateQueries({ queryKey: ["projects"] });
@@ -53,6 +81,20 @@ export function ProjectsPage() {
     window.open(exportProjectArchiveUrl(projectId), "_blank");
   }, []);
 
+  const handleSearchChange = useCallback(
+    (_event: unknown, data: { value: string }) => {
+      setSearchValue(data.value);
+      if (pendingDelete !== null) {
+        setPendingDelete(null);
+      }
+    },
+    [pendingDelete]
+  );
+
+  const handleClearSearch = useCallback(() => {
+    setSearchValue("");
+  }, []);
+
   if (isLoading) {
     return (
       <section className="page-surface" aria-label="Projects">
@@ -70,15 +112,51 @@ export function ProjectsPage() {
     );
   }
 
+  const totalCount = projects?.length ?? 0;
+  const visibleCount = filteredProjects?.length ?? 0;
+  const isFiltered = normalizedQuery !== "" && totalCount > 0;
+  const counterLabel = isFiltered
+    ? `${visibleCount} of ${totalCount}`
+    : `${totalCount} total`;
+
   return (
     <section className="page-surface" aria-label="Projects">
       <div className="section-heading">
-        <Title2 as="h2">Projects</Title2>
-        <Text className="muted-text">{projects?.length ?? 0} total</Text>
+        <div className="projects-heading-text">
+          <Title2 as="h2">Projects</Title2>
+          <Text className="muted-text" aria-live="polite">
+            {counterLabel}
+          </Text>
+        </div>
+        <div className="project-search">
+          <Input
+            className="project-search-input"
+            type="search"
+            aria-label={SEARCH_INPUT_LABEL}
+            placeholder={SEARCH_PLACEHOLDER}
+            value={searchValue}
+            onChange={handleSearchChange}
+            contentBefore={<SearchGlyph />}
+            contentAfter={
+              searchValue === "" ? null : (
+                <Tooltip content={SEARCH_CLEAR_LABEL} relationship="label">
+                  <Button
+                    appearance="subtle"
+                    size="small"
+                    aria-label={SEARCH_CLEAR_LABEL}
+                    icon={<X size={14} />}
+                    onClick={handleClearSearch}
+                  />
+                </Tooltip>
+              )
+            }
+          />
+        </div>
       </div>
-      {projects?.length ? (
+
+      {visibleCount > 0 ? (
         <div className="item-grid">
-          {projects.map((project) => (
+          {filteredProjects?.map((project) => (
             <article className="item-row project-row" key={project.id}>
               <div className="project-info">
                 <Text weight="semibold">{project.name}</Text>
@@ -122,12 +200,23 @@ export function ProjectsPage() {
             </article>
           ))}
         </div>
-      ) : (
+      ) : totalCount === 0 ? (
         <div className="empty-state">
           <Text weight="semibold">No projects yet.</Text>
           <Text size={200} className="muted-text">
             The workspace is ready for the first project workflow.
           </Text>
+        </div>
+      ) : (
+        <div className="empty-state" role="status">
+          <SearchX size={28} aria-hidden="true" />
+          <Text weight="semibold">No projects match &ldquo;{searchValue.trim()}&rdquo;.</Text>
+          <Text size={200} className="muted-text">
+            Adjust the filter or clear it to see all {totalCount} projects.
+          </Text>
+          <Button appearance="secondary" aria-label={EMPTY_STATE_CLEAR_LABEL} onClick={handleClearSearch}>
+            Clear filter
+          </Button>
         </div>
       )}
 
@@ -169,5 +258,13 @@ export function ProjectsPage() {
         </DialogSurface>
       </Dialog>
     </section>
+  );
+}
+
+function SearchGlyph() {
+  return (
+    <span aria-hidden="true" className="project-search-glyph">
+      <Search size={16} />
+    </span>
   );
 }

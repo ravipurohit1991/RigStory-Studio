@@ -345,6 +345,32 @@ select {
   gap: 2px;
 }
 
+.projects-heading-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.project-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(100%, 320px);
+}
+
+.project-search-input {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.project-search-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rs-ink-muted);
+}
+
 .project-actions {
   display: flex;
   align-items: center;
